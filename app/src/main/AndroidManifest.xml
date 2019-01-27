@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".trainignsplanActivity" />
-        <activity android:name=".selbsterstellen"></activity>
+        <activity android:name=".selbsterstellen" />
+        <activity android:name=".Statistik" />
+        <activity android:name=".Motivation" />
+        <activity android:name=".activityMotivation"></activity>
     </application>
 
 </manifest>
