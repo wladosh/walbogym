@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">WalboGym</string>
     <string name="brust"><u>Brust</u></string>
+    <string name="title_activity_trainieren">activity_trainieren</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">WalboGym</string>
+    <string name="nav_header_subtitle">walbo-studios@gmail.com</string>
+    <string name="nav_header_desc">Menü</string>
+    <string name="action_settings">Settings</string>
 </resources>

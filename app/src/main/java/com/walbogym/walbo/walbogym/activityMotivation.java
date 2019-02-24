@@ -8,6 +8,6 @@ public class activityMotivation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_motivation2);
+        setContentView(R.layout.activity_motivation);
     }
 }

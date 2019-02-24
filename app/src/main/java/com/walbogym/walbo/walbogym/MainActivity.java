@@ -19,10 +19,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configureNextButton(){
+        Button activityTraining = (Button)findViewById(R.id.trainingstartbtn);
         Button activityTrainingsplan = (Button)findViewById(R.id.trainingsplanbtn);
         Button activityStatistik = (Button)findViewById(R.id.statistikbtn);
         Button activityMotivation = (Button)findViewById(R.id.motivationbtn);
 
+        activityTraining.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(MainActivity.this, Training_Trainingsplanauswahl.class));
+            }
+        });
         activityTrainingsplan.setOnClickListener(new View.OnClickListener(){
             @Override
                     public void onClick(View view){
