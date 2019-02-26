@@ -27,7 +27,6 @@
             android:name=".activity_trainieren"
             android:label="@string/title_activity_trainieren"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity_trainingsubung" />
         <activity android:name=".activity_trainingubung"></activity>
     </application>
 
