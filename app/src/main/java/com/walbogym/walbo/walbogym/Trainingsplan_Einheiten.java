@@ -56,6 +56,7 @@ public class Trainingsplan_Einheiten extends AppCompatActivity {
         Button einheit2 = (Button)findViewById(R.id.einheit2add);
         Button einheit3 = (Button)findViewById(R.id.einheit3add);
         Button einheit4 = (Button)findViewById(R.id.einheit4add);
+        Button menubtn = (Button)findViewById(R.id.trainingsplaneinheiten_menubtn);
         einheit1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -90,6 +91,12 @@ public class Trainingsplan_Einheiten extends AppCompatActivity {
                 startActivity(new Intent(Trainingsplan_Einheiten.this, selbsterstellen.class));
                 editor.putString("Trainingsplan1Einheit4", einheit4name.getText().toString());
                 editor.apply();
+            }
+        });
+        menubtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(Trainingsplan_Einheiten.this, MainActivity.class));
             }
         });
     }

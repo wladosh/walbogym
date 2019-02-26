@@ -91,50 +91,76 @@ public class selbsterstellen extends AppCompatActivity {
                 String Trainingsplan = "Trainingsplan1Einheit"+ Einheit.toString();
                 if(Bankdrückenbool == true)
                     editor.putString(Trainingsplan+"Bankdrücken", "true");
+                else editor.putString(Trainingsplan+"Bankdrücken", "false");
                 if(Liegestützebool == true)
                     editor.putString(Trainingsplan+"Liegestütze", "true");
+                else editor.putString(Trainingsplan+"Liegestütze", "false");
                 if(Butterflybool == true)
                     editor.putString(Trainingsplan+"Butterfly", "true");
+                else editor.putString(Trainingsplan+"Butterfly", "false");
                 if(Schulterdrückenbool == true)
                     editor.putString(Trainingsplan+"Schulterdrücken", "true");
+                else editor.putString(Trainingsplan+"Schulterdrücken", "false");
                 if(Seithebenbool == true)
                     editor.putString(Trainingsplan+"Seitheben", "true");
+                else editor.putString(Trainingsplan+"Seitheben", "false");
+                if(Fronthebenbool == true)
+                    editor.putString(Trainingsplan+"Frontheben", "true");
+                else editor.putString(Trainingsplan+"Frontheben", "false");
                 if(Seithebenkabelbool == true)
                     editor.putString(Trainingsplan+"Seithebenkabelzug", "true");
+                else editor.putString(Trainingsplan+"Seithebenkabelzug", "false");
                 if(Facepullsbool == true)
                     editor.putString(Trainingsplan+"Facepulls", "true");
+                else editor.putString(Trainingsplan+"Facepulls", "false");
                 if(Trizepspushdownsbool == true)
                     editor.putString(Trainingsplan+"Trizepspushdowns", "true");
+                else editor.putString(Trainingsplan+"Trizepspushdowns", "false");
                 if(Trizepsüberkopfbool == true)
                     editor.putString(Trainingsplan+"Trizepsüberkopf", "true");
+                else editor.putString(Trainingsplan+"Trizepsüberkopf", "false");
                 if(Bizepscurlskurzhantelbool == true)
                     editor.putString(Trainingsplan+"Bizepscurlskurzhantel", "true");
+                else editor.putString(Trainingsplan+"Bizepscurlskurzhantel", "false");
                 if(Bizepscurlskabelbool == true)
                     editor.putString(Trainingsplan+"Bizepscurlskabel", "true");
+                else editor.putString(Trainingsplan+"Bizepscurlskabel", "false");
                 if(Bizepscurlslanghantelkabelbool == true)
                     editor.putString(Trainingsplan+"Bizepscurlslangkabel", "true");
+                else editor.putString(Trainingsplan+"Bizepscurlslangkabel", "false");
                 if(Bizepscurlslanghantelbool == true)
                     editor.putString(Trainingsplan+"Bizepscurlslanghantel", "true");
+                else editor.putString(Trainingsplan+"Bizepscurlslanghantel", "false");
                 if(Latziehenbool == true)
                     editor.putString(Trainingsplan+"Latziehen", "true");
+                else editor.putString(Trainingsplan+"Latziehen", "false");
                 if(Klimmzügebool == true)
                     editor.putString(Trainingsplan+"Klimmzüge", "true");
+                else editor.putString(Trainingsplan+"Klimmzüge", "false");
                 if(Rudernkurzbool == true)
                     editor.putString(Trainingsplan+"Rudernkurz", "true");
+                else editor.putString(Trainingsplan+"Rudernkurz", "false");
                 if(Rudernlangbool == true)
                     editor.putString(Trainingsplan+"Rudernlang", "true");
+                else editor.putString(Trainingsplan+"Rudernlang", "false");
                 if(Kniebeugenbool == true)
                     editor.putString(Trainingsplan+"Kniebeugen", "true");
+                else editor.putString(Trainingsplan+"Kniebeugen", "false");
                 if(Beinpressebool == true)
                     editor.putString(Trainingsplan+"Beinpresse", "true");
+                else editor.putString(Trainingsplan+"Beinpresse", "false");
                 if(Kreuzhebenbool == true)
                     editor.putString(Trainingsplan+"Kreuzheben", "true");
+                else editor.putString(Trainingsplan+"Kreuzheben", "false");
                 if(Beinbeugerbool == true)
                     editor.putString(Trainingsplan+"Beinbeuger", "true");
+                else editor.putString(Trainingsplan+"Beinbeuger", "false");
                 if(Beincurlsbool == true)
                     editor.putString(Trainingsplan+"Beincurls", "true");
+                else editor.putString(Trainingsplan+"Beincurls", "false");
                 if(Wadendrückenbool == true)
                     editor.putString(Trainingsplan+"Wadendrücken", "true");
+                else editor.putString(Trainingsplan+"Wadendrücken", "false");
 
 
                 editor.apply();
@@ -470,100 +496,99 @@ public class selbsterstellen extends AppCompatActivity {
         SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingsplan1", 0);
         String Trainingsplan = "Trainingsplan1Einheit"+ Einheit.toString();
 
-
-        if(myprefs.getString(Trainingsplan+"Bankdrücken", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Bankdrücken", "").equals("true")){
             Bankdrücken.setBackgroundColor(Color.rgb(236,134,0));
             Bankdrückenbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Liegestütze", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Liegestütze", "").equals("true")){
             Liegestütze.setBackgroundColor(Color.rgb(236,134,0));
             Liegestützebool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Butterfly", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Butterfly", "").equals("true")){
             Butterfly.setBackgroundColor(Color.rgb(236,134,0));
             Butterflybool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Schulterdrücken", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Schulterdrücken", "").equals("true")){
             Schulterdrücken.setBackgroundColor(Color.rgb(236,134,0));
             Schulterdrückenbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Seitheben", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Seitheben", "").equals("true")){
             Seitheben.setBackgroundColor(Color.rgb(236,134,0));
             Seithebenbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Frontheben", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Frontheben", "").equals("true")){
             Frontheben.setBackgroundColor(Color.rgb(236,134,0));
             Fronthebenbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Seithebenkabelzug", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Seithebenkabelzug", "").equals("true")){
             SeithebenKabel.setBackgroundColor(Color.rgb(236,134,0));
             Seithebenkabelbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Facepulls", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Facepulls", "").equals("true")){
             Facepulls.setBackgroundColor(Color.rgb(236,134,0));
             Facepullsbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Trizepspushdowns", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Trizepspushdowns", "").equals("true")){
             Trizepspushdowns.setBackgroundColor(Color.rgb(236,134,0));
             Trizepspushdownsbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Trizepsüberkopf", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Trizepsüberkopf", "").equals("true")){
             Trizepsüberkopf.setBackgroundColor(Color.rgb(236,134,0));
             Trizepsüberkopfbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Bizepscurlskurzhantel", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Bizepscurlskurzhantel", "").equals("true")){
             Bizepscurlskurzhantel.setBackgroundColor(Color.rgb(236,134,0));
             Bizepscurlskurzhantelbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Bizepscurlskabel", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Bizepscurlskabel", "").equals("true")){
             Bizepscurlskabel.setBackgroundColor(Color.rgb(236,134,0));
             Bizepscurlskabelbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Bizepscurlslanghantel", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Bizepscurlslanghantel", "").equals("true")){
             Bizepscurlslanghantel.setBackgroundColor(Color.rgb(236,134,0));
             Bizepscurlslanghantelbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Bizepscurlslangkabel", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Bizepscurlslangkabel", "").equals("true")){
             Bizepscurlslanghantelkabel.setBackgroundColor(Color.rgb(236,134,0));
             Bizepscurlslanghantelkabelbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Latziehen", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Latziehen", "").equals("true")){
             Latziehen.setBackgroundColor(Color.rgb(236,134,0));
             Latziehenbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Klimmzüge", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Klimmzüge", "").equals("true")){
             Klimmzüge.setBackgroundColor(Color.rgb(236,134,0));
             Klimmzügebool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Rudernkurz", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Rudernkurz", "").equals("true")){
             Rudernkurz.setBackgroundColor(Color.rgb(236,134,0));
             Rudernkurzbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Rudernlang", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Rudernlang", "").equals("true")){
             Rudernlang.setBackgroundColor(Color.rgb(236,134,0));
             Rudernlangbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Kniebeugen", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Kniebeugen", "").equals("true")){
             Kniebeugen.setBackgroundColor(Color.rgb(236,134,0));
             Kniebeugenbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Beinpresse", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Beinpresse", "").equals("true")){
             Beinpresse.setBackgroundColor(Color.rgb(236,134,0));
             Beinpressebool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Kreuzheben", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Kreuzheben", "").equals("true")){
             Kreuzheben.setBackgroundColor(Color.rgb(236,134,0));
             Kreuzhebenbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Beinbeuger", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Beinbeuger", "").equals("true")){
             Beinbeuger.setBackgroundColor(Color.rgb(236,134,0));
             Beinbeugerbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Beincurls", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Beincurls", "").equals("true")){
             Beincurls.setBackgroundColor(Color.rgb(236,134,0));
             Beincurlsbool = true;
         }
-        if(myprefs.getString(Trainingsplan+"Wadendrücken", "") == "true"){
+        if(myprefs.getString(Trainingsplan+"Wadendrücken", "").equals("true")){
             Wadendrücken.setBackgroundColor(Color.rgb(236,134,0));
             Wadendrückenbool = true;
         }

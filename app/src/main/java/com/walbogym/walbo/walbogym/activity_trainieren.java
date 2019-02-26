@@ -107,27 +107,11 @@ public class activity_trainieren extends AppCompatActivity
         return true;
     }
 
-    private void createbuttons(){
-        switch (Einheit){
-            case 1:
-                loadEinheit1Übungen();
-                break;
-            case 2:
-                //loadEinheit2Übungen();
-                break;
-            case 3:
-                //loadEinheit3Übungen();
-                break;
-            case 4:
-                //loadEinheit4Übungen();
-                break;
-        }
-    }
 
-    private void loadEinheit1Übungen(){
+    private void createbuttons(){
         SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingsplan1", 0);
 
-        String trainingsplan = "Trainingsplan1Einheit1";
+        String trainingsplan = "Trainingsplan1Einheit"+Einheit;
         String Bankdrücken = myprefs.getString((trainingsplan + "Bankdrücken"),"default");
         String Liegestütze = myprefs.getString((trainingsplan + "Liegestütze"),"default");
         String Butterfly = myprefs.getString((trainingsplan + "Butterfly"),"default");
