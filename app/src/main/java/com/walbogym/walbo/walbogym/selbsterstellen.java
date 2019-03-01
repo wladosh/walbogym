@@ -21,6 +21,9 @@ public class selbsterstellen extends AppCompatActivity {
     }
 
     public static Integer Einheit;
+    public static Integer aktuellerTrainingsplan;
+
+
     Boolean Bankdrückenbool = false;
     Boolean Liegestützebool = false;
     Boolean Butterflybool = false;
@@ -85,10 +88,10 @@ public class selbsterstellen extends AppCompatActivity {
             public void onClick(View view){
                 startActivity(new Intent(selbsterstellen.this, Trainingsplan_Einheiten.class));
 
-                SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingsplan1", 0);
+                SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingspläne", 0);
                 SharedPreferences.Editor editor = myprefs.edit();
 
-                String Trainingsplan = "Trainingsplan1Einheit"+ Einheit.toString();
+                String Trainingsplan = "Trainingsplan"+aktuellerTrainingsplan+"Einheit"+ Einheit.toString();
                 if(Bankdrückenbool == true)
                     editor.putString(Trainingsplan+"Bankdrücken", "true");
                 else editor.putString(Trainingsplan+"Bankdrücken", "false");
@@ -493,8 +496,8 @@ public class selbsterstellen extends AppCompatActivity {
         final Button Beincurls = (Button)findViewById(R.id.Beincurls);
         final Button Wadendrücken = (Button)findViewById(R.id.wadendrücken);
 
-        SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingsplan1", 0);
-        String Trainingsplan = "Trainingsplan1Einheit"+ Einheit.toString();
+        SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingspläne", 0);
+        String Trainingsplan = "Trainingsplan"+aktuellerTrainingsplan+"Einheit"+ Einheit.toString();
 
         if(myprefs.getString(Trainingsplan+"Bankdrücken", "").equals("true")){
             Bankdrücken.setBackgroundColor(Color.rgb(236,134,0));

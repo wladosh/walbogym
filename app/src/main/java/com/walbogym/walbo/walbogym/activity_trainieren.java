@@ -25,6 +25,8 @@ public class activity_trainieren extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public static Integer Einheit;
+    public static Integer aktuellerTrainingsplan;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,9 +113,9 @@ public class activity_trainieren extends AppCompatActivity
 
 
     private void createbuttons(){
-        SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingsplan1", 0);
+        SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingspläne", 0);
 
-        String trainingsplan = "Trainingsplan1Einheit"+Einheit;
+        String trainingsplan = "Trainingsplan"+aktuellerTrainingsplan+"Einheit"+Einheit;
         String Bankdrücken = myprefs.getString((trainingsplan + "Bankdrücken"),"default");
         String Liegestütze = myprefs.getString((trainingsplan + "Liegestütze"),"default");
         String Butterfly = myprefs.getString((trainingsplan + "Butterfly"),"default");

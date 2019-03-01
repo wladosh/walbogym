@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 public class Trainingsplan_Einheiten extends AppCompatActivity {
 
+    public static Integer aktuellerTrainingsplan;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,32 +20,49 @@ public class Trainingsplan_Einheiten extends AppCompatActivity {
 
         confiureButtons();
 
-        SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingsplan1", 0);
-        String trainingsplanName = myprefs.getString("Trainingsplan1name", "Default");
-        ((TextView)findViewById(R.id.Trainingsplannametxt)).setText(trainingsplanName); //Name des Trainingsplans
+        SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingspläne", 0);
+        TextView Überschrift = (TextView)findViewById(R.id.Trainingsplannametxt);
+
+        switch (aktuellerTrainingsplan){
+            case 1:
+                Überschrift.setText(myprefs.getString("Trainingsplan1name", "default"));
+                break;
+            case 2:
+                Überschrift.setText(myprefs.getString("Trainingsplan2name", "default"));
+                break;
+            case 3:
+                Überschrift.setText(myprefs.getString("Trainingsplan3name", "default"));
+                break;
+            case 4:
+                Überschrift.setText(myprefs.getString("Trainingsplan4name", "default"));
+                break;
+            case 5:
+                Überschrift.setText(myprefs.getString("Trainingsplan5name", "default"));
+                break;
+        }
 
         //Benennung der Einheiten, sofern sie vergeben wurden
         if(myprefs.contains("Trainingsplan1Einheit1")){
             EditText einheit1name = (EditText)findViewById(R.id.einheit1txb);
-            einheit1name.setText(myprefs.getString("Trainingsplan1Einheit1", "name"));
+            einheit1name.setText(myprefs.getString("Trainingsplan"+aktuellerTrainingsplan+"Einheit1", ""));
         }
         if(myprefs.contains("Trainingsplan1Einheit2")){
             EditText einheit2name = (EditText)findViewById(R.id.einheit2txb);
-            einheit2name.setText(myprefs.getString("Trainingsplan1Einheit2", "name"));
+            einheit2name.setText(myprefs.getString("Trainingsplan"+aktuellerTrainingsplan+"Einheit2", ""));
         }
         if(myprefs.contains("Trainingsplan1Einheit3")){
             EditText einheit3name = (EditText)findViewById(R.id.einheit3txb);
-            einheit3name.setText(myprefs.getString("Trainingsplan1Einheit3", "name"));
+            einheit3name.setText(myprefs.getString("Trainingsplan"+aktuellerTrainingsplan+"Einheit3", ""));
         }
         if(myprefs.contains("Trainingsplan1Einheit4")){
             EditText einheit4name = (EditText)findViewById(R.id.einheit4txb);
-            einheit4name.setText(myprefs.getString("Trainingsplan1Einheit4", "name"));
+            einheit4name.setText(myprefs.getString("Trainingsplan"+aktuellerTrainingsplan+"Einheit4", ""));
         }
 
     }
 
     private void confiureButtons(){
-        SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingsplan1", 0);
+        SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingspläne", 0);
         final SharedPreferences.Editor editor = myprefs.edit();
 
 
@@ -61,8 +80,9 @@ public class Trainingsplan_Einheiten extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 selbsterstellen.Einheit = 1;
+                selbsterstellen.aktuellerTrainingsplan = aktuellerTrainingsplan;
                 startActivity(new Intent(Trainingsplan_Einheiten.this, selbsterstellen.class));
-                editor.putString("Trainingsplan1Einheit1", einheit1name.getText().toString());
+                editor.putString("Trainingsplan"+aktuellerTrainingsplan+"Einheit1", einheit1name.getText().toString());
                 editor.apply();
             }
         });
@@ -70,8 +90,9 @@ public class Trainingsplan_Einheiten extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 selbsterstellen.Einheit = 2;
+                selbsterstellen.aktuellerTrainingsplan = aktuellerTrainingsplan;
                 startActivity(new Intent(Trainingsplan_Einheiten.this, selbsterstellen.class));
-                editor.putString("Trainingsplan1Einheit2", einheit2name.getText().toString());
+                editor.putString("Trainingsplan"+aktuellerTrainingsplan+"Einheit2", einheit2name.getText().toString());
                 editor.apply();
             }
         });
@@ -79,8 +100,9 @@ public class Trainingsplan_Einheiten extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 selbsterstellen.Einheit = 3;
+                selbsterstellen.aktuellerTrainingsplan = aktuellerTrainingsplan;
                 startActivity(new Intent(Trainingsplan_Einheiten.this, selbsterstellen.class));
-                editor.putString("Trainingsplan1Einheit3", einheit3name.getText().toString());
+                editor.putString("Trainingsplan"+aktuellerTrainingsplan+"Einheit3", einheit3name.getText().toString());
                 editor.apply();
             }
         });
@@ -88,8 +110,9 @@ public class Trainingsplan_Einheiten extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 selbsterstellen.Einheit = 4;
+                selbsterstellen.aktuellerTrainingsplan = aktuellerTrainingsplan;
                 startActivity(new Intent(Trainingsplan_Einheiten.this, selbsterstellen.class));
-                editor.putString("Trainingsplan1Einheit4", einheit4name.getText().toString());
+                editor.putString("Trainingsplan"+aktuellerTrainingsplan+"Einheit4", einheit4name.getText().toString());
                 editor.apply();
             }
         });
