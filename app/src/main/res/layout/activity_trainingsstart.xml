@@ -4,11 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_trainingubung">
-
+    tools:context=".activity_trainingsstart">
 
     <TextView
-        android:id="@+id/ubungtxt"
+        android:id="@+id/aktuellersatztxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Satz"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/ubungtxtimsatz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -31,19 +51,19 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/scrollView4"
         android:layout_width="368dp"
-        android:layout_height="438dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
+        android:layout_height="456dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="3dp"
         android:layout_marginRight="3dp"
+        android:layout_marginBottom="3dp"
         android:background="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.753">
+        app:layout_constraintVertical_bias="0.704">
 
         <TextView
             android:id="@+id/gewichttxt"
@@ -66,15 +86,15 @@
             app:layout_constraintVertical_bias="0.036" />
 
         <EditText
-            android:id="@+id/gewichttxb"
-            android:layout_width="115dp"
+            android:id="@+id/gewichtimsatztxb"
+            android:layout_width="121dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             android:ems="10"
             android:gravity="right"
             android:hint="z.B. 30,25"
@@ -101,7 +121,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/gewichttxb" />
+            app:layout_constraintTop_toTopOf="@+id/gewichtimsatztxb" />
 
         <TextView
             android:id="@+id/wiederholungentxt"
@@ -114,37 +134,17 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="236dp"
             android:text="Wiederholungen"
-            android:textSize="24sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.137"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gewichtimsatztxb"
-            app:layout_constraintVertical_bias="0.617" />
-
-        <TextView
-            android:id="@+id/saetzetxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="236dp"
-            android:text="Sätze"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.567"
-            app:layout_constraintStart_toEndOf="@+id/wiederholungentxt"
-            app:layout_constraintTop_toBottomOf="@+id/gewichtimsatztxb"
-            app:layout_constraintVertical_bias="0.617" />
+            app:layout_constraintVertical_bias="0.207" />
 
         <EditText
-            android:id="@+id/wiederholungentxb"
+            android:id="@+id/wiederholungenimsatztxb"
             android:layout_width="90dp"
             android:layout_height="46dp"
             android:layout_marginTop="8dp"
@@ -160,32 +160,12 @@
             app:layout_constraintTop_toBottomOf="@+id/wiederholungentxt"
             app:layout_constraintVertical_bias="0.015" />
 
-        <EditText
-            android:id="@+id/saetzetxb"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:layout_marginBottom="8dp"
-            android:ems="10"
-            android:hint="3"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/saetzetxt"
-            app:layout_constraintHorizontal_bias="0.555"
-            app:layout_constraintStart_toStartOf="@+id/saetzetxt"
-            app:layout_constraintTop_toBottomOf="@+id/saetzetxt"
-            app:layout_constraintVertical_bias="0.0" />
-
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginTop="244dp"
             android:background="@android:color/darker_gray"
             app:layout_constraintBottom_toTopOf="@+id/gewichttxt"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
@@ -197,31 +177,127 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
+            android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="503dp"
+            android:layout_marginTop="474dp"
             android:background="@android:color/darker_gray"
             app:layout_constraintBottom_toTopOf="@+id/gewichttxt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/timertxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/timerprogressbar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.486" />
+            app:layout_constraintStart_toStartOf="@+id/timerprogressbar"
+            app:layout_constraintTop_toTopOf="@+id/timerprogressbar" />
 
         <Button
             android:id="@+id/timerstartbtn"
-            android:layout_width="265dp"
-            android:layout_height="113dp"
-            android:layout_marginStart="52dp"
-            android:layout_marginLeft="52dp"
+            android:layout_width="193dp"
+            android:layout_height="48dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Starte mit Satz 1"
-            android:textSize="24sp"
+            android:text="starte Timer"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.922" />
+            app:layout_constraintVertical_bias="0.885" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Pause"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/timerprogressbar"
+            app:layout_constraintHorizontal_bias="0.456"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/timertxb"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="2:30"
+            android:inputType="textPersonName|time"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/timerstartbtn"
+            app:layout_constraintEnd_toStartOf="@+id/timerprogressbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <ProgressBar
+            android:id="@+id/timerprogressbar"
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="177dp"
+            android:layout_height="179dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:progress="80"
+            android:progressDrawable="@drawable/circle"
+            app:layout_constraintBottom_toBottomOf="@+id/timerstartbtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/timerstartbtn"
+            app:layout_constraintVertical_bias="0.862" />
+
+        <Button
+            android:id="@+id/nächstersatzbtn"
+            android:layout_width="193dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="1dp"
+            android:text="Nächster Satz"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/countowntxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/timerprogressbar"
+            app:layout_constraintEnd_toEndOf="@+id/timerprogressbar"
+            app:layout_constraintStart_toStartOf="@+id/timerprogressbar"
+            app:layout_constraintTop_toTopOf="@+id/timerprogressbar" />
 
     </android.support.constraint.ConstraintLayout>
-
 </android.support.constraint.ConstraintLayout>

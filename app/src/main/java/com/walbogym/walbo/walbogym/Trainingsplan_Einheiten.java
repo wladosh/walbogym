@@ -87,7 +87,7 @@ public class Trainingsplan_Einheiten extends AppCompatActivity {
         einheit4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                selbsterstellen.Einheit = 3;
+                selbsterstellen.Einheit = 4;
                 startActivity(new Intent(Trainingsplan_Einheiten.this, selbsterstellen.class));
                 editor.putString("Trainingsplan1Einheit4", einheit4name.getText().toString());
                 editor.apply();

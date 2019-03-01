@@ -51,6 +51,8 @@ public class activity_trainieren extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         createbuttons();
+
+        //activity_trainingsstart.Einheit = Einheit; //Wenn mann die Übung abschließt gelangt man wieder in diese Activity, die Einheit
     }
 
     @Override
@@ -118,7 +120,7 @@ public class activity_trainieren extends AppCompatActivity
         String Schulterdrücken = myprefs.getString((trainingsplan + "Schulterdrücken"),"default");
         String Seitheben = myprefs.getString((trainingsplan + "Seitheben"),"default");
         String Frontheben = myprefs.getString((trainingsplan + "Frontheben"),"default");
-        String Seithebenkabel = myprefs.getString((trainingsplan + "Seithebenkabel"),"default");
+        String Seithebenkabel = myprefs.getString((trainingsplan + "Seithebenkabelzug"),"default");
         String Facepulls = myprefs.getString((trainingsplan + "Facepulls"),"default");
         String Trizepspushdowns = myprefs.getString((trainingsplan + "Trizepspushdowns"),"default");
         String Trizepsüberkopf = myprefs.getString((trainingsplan + "Trizepsüberkopf"),"default");
@@ -128,6 +130,8 @@ public class activity_trainieren extends AppCompatActivity
         String Bizepscurlslanghantel = myprefs.getString((trainingsplan + "Bizepscurlslanghantel"),"default");
         String Latziehen = myprefs.getString((trainingsplan + "Latziehen"),"default");
         String Klimmzüge = myprefs.getString((trainingsplan + "Klimmzüge"),"default");
+        String Rudernkurzgriff = myprefs.getString((trainingsplan + "Rudernkurz"),"default");
+        String Rudernlanggriff = myprefs.getString((trainingsplan + "Rudernlang"),"default");
         String Beinpresse = myprefs.getString((trainingsplan + "Beinpresse"),"default");
         String Kreuzheben = myprefs.getString((trainingsplan + "Kreuzheben"),"default");
         String Beinbeuger = myprefs.getString((trainingsplan + "Beinbeuger"),"default");
@@ -150,6 +154,8 @@ public class activity_trainieren extends AppCompatActivity
         if (Bizepscurlslanghantel.equals("true"))createButton("Bizepscurls Langhantel");
         if (Latziehen.equals("true"))createButton("Latziehen");
         if (Klimmzüge.equals("true"))createButton("Klimmzüge");
+        if (Rudernkurzgriff.equals("true"))createButton("Rudern Kurzgriff");
+        if (Rudernlanggriff.equals("true"))createButton("Rudern Langgriff");
         if (Beinpresse.equals("true"))createButton("Beinpresse");
         if (Kreuzheben.equals("true"))createButton("Kreuzheben");
         if (Beinbeuger.equals("true"))createButton("Beinbeuger");
