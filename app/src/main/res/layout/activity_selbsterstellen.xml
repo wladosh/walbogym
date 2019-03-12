@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/black"
     android:layout_height="match_parent"
     android:focusable="true" android:focusableInTouchMode="true"
     tools:context=".selbsterstellen">
@@ -17,9 +18,12 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_bg"
         android:ems="10"
         android:hint="Übung"
         android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.163"
@@ -54,28 +58,36 @@
 
             <TextView
                 android:id="@+id/überschrift_brust"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Brust"
+                android:textColor="@color/colorPrimary"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/bankdrücken"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button_weis"
                 android:text="Bankdrücken" />
 
             <Button
                 android:id="@+id/liegestütze"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button_weis"
                 android:text="Liegestütze" />
 
             <Button
                 android:id="@+id/butterfly"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button_weis"
                 android:text="Butterfly" />
 
 
@@ -84,37 +96,48 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Schulter"
+                android:textColor="@color/colorPrimary"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/schulterdrücken"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button_weis"
                 android:text="Schulterdrücken" />
 
             <Button
                 android:id="@+id/seitheben"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button_weis"
                 android:text="Seitheben" />
 
             <Button
                 android:id="@+id/frontheben"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button_weis"
                 android:text="Frontheben" />
 
             <Button
                 android:id="@+id/seithebenkabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button_weis"
                 android:text="Seitheben Kabelzug" />
 
             <Button
                 android:id="@+id/facepulls"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button_weis"
                 android:text="Face pulls" />
 
             <TextView
@@ -122,19 +145,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Trizeps"
+                android:textColor="@color/colorPrimary"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/trizepspushdowns"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button_weis"
                 android:text="Trizepspushdowns" />
 
             <Button
                 android:id="@+id/trizepsüberkopf"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Trizeps über Kopf" />
 
             <TextView
@@ -142,31 +169,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Bizeps"
+                android:textColor="@color/colorPrimary"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/bizepscurlskurzhantel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Bizeps Curls Kurzhantel" />
 
             <Button
                 android:id="@+id/bizepscurlskabelzug"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Bizeps Curls Kabelzug" />
 
             <Button
                 android:id="@+id/bizepscurlslanghantel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Bizeps Curls Langhantel" />
 
             <Button
                 android:id="@+id/bizepscurlslanghantelKabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Bizeps Curls Langhantel Kabelzug" />
 
             <TextView
@@ -174,31 +206,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rücken"
+                android:textColor="@color/colorPrimary"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/latziehen"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Latziehen" />
 
             <Button
                 android:id="@+id/klimmzüge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Klimmzüge" />
 
             <Button
                 android:id="@+id/rudernkurzgriff"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Rudern mit Kurzgriff" />
 
             <Button
                 android:id="@+id/rudernlanggriff"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Rudern mit Langgriff" />
 
             <TextView
@@ -206,43 +243,50 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Beine"
+                android:textColor="@color/colorPrimary"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/kniebeugen"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Kniebeugen" />
 
             <Button
                 android:id="@+id/beinpresse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Beinpresse" />
 
             <Button
                 android:id="@+id/kreuzheben"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Kreuzheben" />
 
             <Button
                 android:id="@+id/beinbeuger"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Beinbeuger" />
 
             <Button
                 android:id="@+id/Beincurls"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Beincurls" />
 
             <Button
                 android:id="@+id/wadendrücken"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
                 android:text="Wadendrücken" />
         </LinearLayout>
 

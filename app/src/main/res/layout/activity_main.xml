@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     tools:context=".MainActivity"
     android:background="@color/black">
 
@@ -121,6 +122,7 @@
         android:layout_marginBottom="8dp"
         android:text="Created by Walbo Studios ©"
         android:textColor="@color/colorPrimary"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.041"

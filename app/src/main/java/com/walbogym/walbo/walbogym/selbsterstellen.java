@@ -91,7 +91,7 @@ public class selbsterstellen extends AppCompatActivity {
                 SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingspläne", 0);
                 SharedPreferences.Editor editor = myprefs.edit();
 
-                String Trainingsplan = "Trainingsplan"+aktuellerTrainingsplan+"Einheit"+ Einheit.toString();
+                String Trainingsplan = "Trainingsplan"+aktuellerTrainingsplan+"Einheit"+ Einheit;
                 if(Bankdrückenbool == true)
                     editor.putString(Trainingsplan+"Bankdrücken", "true");
                 else editor.putString(Trainingsplan+"Bankdrücken", "false");
@@ -497,7 +497,7 @@ public class selbsterstellen extends AppCompatActivity {
         final Button Wadendrücken = (Button)findViewById(R.id.wadendrücken);
 
         SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingspläne", 0);
-        String Trainingsplan = "Trainingsplan"+aktuellerTrainingsplan+"Einheit"+ Einheit.toString();
+        String Trainingsplan = "Trainingsplan"+aktuellerTrainingsplan+"Einheit"+ Einheit;
 
         if(myprefs.getString(Trainingsplan+"Bankdrücken", "").equals("true")){
             Bankdrücken.setBackgroundColor(Color.rgb(236,134,0));

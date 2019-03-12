@@ -24,7 +24,7 @@ public class trainignsplanActivity extends AppCompatActivity {
 
         confiureButtons();
 
-        SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingsplan1", 0);
+        SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingspläne", 0);
         TextView text = (TextView)findViewById(R.id.Trainingsplantxt);
         if(myprefs.contains("Trainingsplan1name") || myprefs.contains("Trainingsplan2name") || myprefs.contains("Trainingsplan3name")|| myprefs.contains("Trainingsplan4name")|| myprefs.contains("Trainingsplan5name")){
             text.setText("Wähle einen von den unten stehenden Trainingsplänen aus, oder erstelle einen neuen.");
@@ -71,8 +71,10 @@ public class trainignsplanActivity extends AppCompatActivity {
 
     private void Trainingspläne() {
         SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingspläne", 0);
+        final SharedPreferences.Editor editor = myprefs.edit();
 
-            LinearLayout TrainingsplanLayout = (LinearLayout) findViewById(R.id.LayoutTrainingsplänebearbeiten);
+        final LinearLayout TrainingsplanLayout = (LinearLayout) findViewById(R.id.LayoutTrainingsplänebearbeiten);
+            final LinearLayout minusbtnlayout = (LinearLayout) findViewById(R.id.minusbtnlayout);
             TextView text = (TextView) findViewById(R.id.Trainingsplantxt);
 
             TextView infotext = new TextView(this);
@@ -81,9 +83,13 @@ public class trainignsplanActivity extends AppCompatActivity {
             TrainingsplanLayout.addView(infotext);
 
             if (myprefs.contains("Trainingsplan1name")){
-                Button trainingsplan1 = new Button(this);
+                final Button trainingsplan1 = new Button(this);
                 trainingsplan1.setText(myprefs.getString("Trainingsplan1name", "default"));
                 TrainingsplanLayout.addView(trainingsplan1);
+
+                final Button trainingsplan1delete = new Button(this);
+                trainingsplan1delete.setText("-");
+                minusbtnlayout.addView(trainingsplan1delete);
 
                 trainingsplan1.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -92,11 +98,25 @@ public class trainignsplanActivity extends AppCompatActivity {
                         Trainingsplan_Einheiten.aktuellerTrainingsplan = 1;
                     }
                 });
+                trainingsplan1delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        TrainingsplanLayout.removeView(trainingsplan1);
+                        minusbtnlayout.removeView(trainingsplan1delete);
+                        editor.remove("Trainingsplan1name");
+                        editor.apply();
+                        deleteprefs(1);
+                    }
+                });
             }
         if (myprefs.contains("Trainingsplan2name")){
-            Button trainingsplan2 = new Button(this);
+            final Button trainingsplan2 = new Button(this);
             trainingsplan2.setText(myprefs.getString("Trainingsplan2name", "default"));
             TrainingsplanLayout.addView(trainingsplan2);
+
+            final Button trainingsplan2delete = new Button(this);
+            trainingsplan2delete.setText("-");
+            minusbtnlayout.addView(trainingsplan2delete);
 
             trainingsplan2.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -105,11 +125,25 @@ public class trainignsplanActivity extends AppCompatActivity {
                     Trainingsplan_Einheiten.aktuellerTrainingsplan = 2;
                 }
             });
+            trainingsplan2delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    TrainingsplanLayout.removeView(trainingsplan2);
+                    minusbtnlayout.removeView(trainingsplan2delete);
+                    editor.remove("Trainingsplan2name");
+                    editor.apply();
+                    deleteprefs(2);
+                }
+            });
         }
         if (myprefs.contains("Trainingsplan3name")){
-            Button trainingsplan3 = new Button(this);
+            final Button trainingsplan3 = new Button(this);
             trainingsplan3.setText(myprefs.getString("Trainingsplan3name", "default"));
             TrainingsplanLayout.addView(trainingsplan3);
+
+            final Button trainingsplan3delete = new Button(this);
+            trainingsplan3delete.setText("-");
+            minusbtnlayout.addView(trainingsplan3delete);
 
             trainingsplan3.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -118,11 +152,25 @@ public class trainignsplanActivity extends AppCompatActivity {
                     Trainingsplan_Einheiten.aktuellerTrainingsplan = 3;
                 }
             });
+            trainingsplan3delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    TrainingsplanLayout.removeView(trainingsplan3);
+                    minusbtnlayout.removeView(trainingsplan3delete);
+                    editor.remove("Trainingsplan3name");
+                    editor.apply();
+                    deleteprefs(3);
+                }
+            });
         }
         if (myprefs.contains("Trainingsplan4name")){
-            Button trainingsplan4 = new Button(this);
+            final Button trainingsplan4 = new Button(this);
             trainingsplan4.setText(myprefs.getString("Trainingsplan4name", "default"));
             TrainingsplanLayout.addView(trainingsplan4);
+
+            final Button trainingsplan4delete = new Button(this);
+            trainingsplan4delete.setText("-");
+            minusbtnlayout.addView(trainingsplan4delete);
 
             trainingsplan4.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -131,11 +179,25 @@ public class trainignsplanActivity extends AppCompatActivity {
                     Trainingsplan_Einheiten.aktuellerTrainingsplan = 4;
                 }
             });
+            trainingsplan4delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    TrainingsplanLayout.removeView(trainingsplan4);
+                    minusbtnlayout.removeView(trainingsplan4delete);
+                    editor.remove("Trainingsplan4name");
+                    editor.apply();
+                    deleteprefs(4);
+                }
+            });
         }
         if (myprefs.contains("Trainingsplan5name")){
-            Button trainingsplan5 = new Button(this);
+            final Button trainingsplan5 = new Button(this);
             trainingsplan5.setText(myprefs.getString("Trainingsplan5name", "default"));
             TrainingsplanLayout.addView(trainingsplan5);
+
+            final Button trainingsplan5delete = new Button(this);
+            trainingsplan5delete.setText("-");
+            minusbtnlayout.addView(trainingsplan5delete);
 
             trainingsplan5.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -144,8 +206,52 @@ public class trainignsplanActivity extends AppCompatActivity {
                     Trainingsplan_Einheiten.aktuellerTrainingsplan = 5;
                 }
             });
+            trainingsplan5delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    TrainingsplanLayout.removeView(trainingsplan5);
+                    minusbtnlayout.removeView(trainingsplan5delete);
+                    editor.remove("Trainingsplan5name");
+                    editor.apply();
+                    deleteprefs(5);
+                }
+            });
         }
 
+    }
+    private void deleteprefs(int aktuellerTrainingsplan){
+        SharedPreferences myprefs = getApplicationContext().getSharedPreferences("trainingspläne", 0);
+        final SharedPreferences.Editor editor = myprefs.edit();
 
+        for(int i = 1; i<5; i++){
+            String Trainingsplan = "Trainingsplan"+aktuellerTrainingsplan+"Einheit"+i;
+
+            editor.remove(Trainingsplan+"Bankdrücken");
+            editor.remove(Trainingsplan+"Liegestütze");
+            editor.remove(Trainingsplan+"Butterfly");
+            editor.remove(Trainingsplan+"Schulterdrücken");
+            editor.remove(Trainingsplan+"Seitheben");
+            editor.remove(Trainingsplan+"Frontheben");
+            editor.remove(Trainingsplan+"Seithebenkabelzug");
+            editor.remove(Trainingsplan+"Facepulls");
+            editor.remove(Trainingsplan+"Trizepspushdowns");
+            editor.remove(Trainingsplan+"Trizepsüberkopf");
+            editor.remove(Trainingsplan+"Bizepscurlskurzhantel");
+            editor.remove(Trainingsplan+"Bizepscurlskabel");
+            editor.remove(Trainingsplan+"Bizepscurlslanghantel");
+            editor.remove(Trainingsplan+"Latziehen");
+            editor.remove(Trainingsplan+"Klimmzüge");
+            editor.remove(Trainingsplan+"Rudernkurz");
+            editor.remove(Trainingsplan+"Rudernlang");
+            editor.remove(Trainingsplan+"Kniebeugen");
+            editor.remove(Trainingsplan+"Beinpresse");
+            editor.remove(Trainingsplan+"Kreuzheben");
+            editor.remove(Trainingsplan+"Beinbeuger");
+            editor.remove(Trainingsplan+"Beincurls");
+            editor.remove(Trainingsplan+"Wadendrücken");
+
+            editor.remove("Trainingsplan"+aktuellerTrainingsplan+"Einheit"+i);
+            editor.apply();
+        }
     }
 }

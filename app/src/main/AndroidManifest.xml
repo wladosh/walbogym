@@ -19,7 +19,6 @@
         <activity android:name=".trainignsplanActivity" />
         <activity android:name=".selbsterstellen" />
         <activity android:name=".Statistik" />
-        <activity android:name=".Motivation" />
         <activity android:name=".activityMotivation" />
         <activity android:name=".Trainingsplan_Einheiten" />
         <activity android:name=".Training_Trainingsplanauswahl" />

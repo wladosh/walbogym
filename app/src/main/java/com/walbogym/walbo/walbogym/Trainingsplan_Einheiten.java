@@ -42,19 +42,19 @@ public class Trainingsplan_Einheiten extends AppCompatActivity {
         }
 
         //Benennung der Einheiten, sofern sie vergeben wurden
-        if(myprefs.contains("Trainingsplan1Einheit1")){
+        if(myprefs.contains("Trainingsplan"+aktuellerTrainingsplan+"Einheit1")){
             EditText einheit1name = (EditText)findViewById(R.id.einheit1txb);
             einheit1name.setText(myprefs.getString("Trainingsplan"+aktuellerTrainingsplan+"Einheit1", ""));
         }
-        if(myprefs.contains("Trainingsplan1Einheit2")){
+        if(myprefs.contains("Trainingsplan"+aktuellerTrainingsplan+"Einheit2")){
             EditText einheit2name = (EditText)findViewById(R.id.einheit2txb);
             einheit2name.setText(myprefs.getString("Trainingsplan"+aktuellerTrainingsplan+"Einheit2", ""));
         }
-        if(myprefs.contains("Trainingsplan1Einheit3")){
+        if(myprefs.contains("Trainingsplan"+aktuellerTrainingsplan+"Einheit3")){
             EditText einheit3name = (EditText)findViewById(R.id.einheit3txb);
             einheit3name.setText(myprefs.getString("Trainingsplan"+aktuellerTrainingsplan+"Einheit3", ""));
         }
-        if(myprefs.contains("Trainingsplan1Einheit4")){
+        if(myprefs.contains("Trainingsplan"+aktuellerTrainingsplan+"Einheit4")){
             EditText einheit4name = (EditText)findViewById(R.id.einheit4txb);
             einheit4name.setText(myprefs.getString("Trainingsplan"+aktuellerTrainingsplan+"Einheit4", ""));
         }

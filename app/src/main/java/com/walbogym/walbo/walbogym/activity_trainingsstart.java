@@ -15,6 +15,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
@@ -47,6 +51,7 @@ public class activity_trainingsstart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trainingsstart);
 
+        SharedPreferences prefs = getSharedPreferences("übungseigenschaften", MODE_PRIVATE);
         setButtons();
         IntializeTextListeners();
 
@@ -54,11 +59,12 @@ public class activity_trainingsstart extends AppCompatActivity {
         Übung.setText(aktuelleübung);
 
         TextView Satz = (TextView)findViewById(R.id.aktuellersatztxt);
-        Satz.setText(("Satz ") + SatzInt.toString());
+        Integer angegenbensätze = Integer.parseInt(prefs.getString("saetze"+aktuelleübung, "3"));
+        Satz.setText(("Satz ") + SatzInt.toString()+"/"+angegenbensätze);
     }
 
     private void setButtons(){
-        Button startbtn = findViewById(R.id.timerstartbtn);
+        final Button startbtn = findViewById(R.id.timerstartbtn);
         Button nächsterSatzbtn = findViewById(R.id.nächstersatzbtn);
 
         startbtn.setOnClickListener(new View.OnClickListener(){
@@ -71,6 +77,7 @@ public class activity_trainingsstart extends AppCompatActivity {
                     convertTime();
                     timerProgressbar.setMax((int)timeleftinmillis/1000); //set Progressbar max
                     Progessbarmax = timerProgressbar.getMax();
+                    startbtn.setAlpha(0);
                 }
             }
         });
@@ -80,7 +87,7 @@ public class activity_trainingsstart extends AppCompatActivity {
                 SharedPreferences prefs = getSharedPreferences("übungseigenschaften", MODE_PRIVATE);
                 //final SharedPreferences.Editor editor = prefs.edit();
 
-                int angegenbensätze = 3;//Integer.parseInt(prefs.getString("saetze"+aktuelleübung,"1"));
+                Integer angegenbensätze = Integer.parseInt(prefs.getString("saetze"+aktuelleübung, "3"));//Integer.parseInt(prefs.getString("saetze"+aktuelleübung,"1"));
                 if (angegenbensätze == SatzInt){
                     startActivity(new Intent(activity_trainingsstart.this, activity_trainieren.class));
                     return;
@@ -92,8 +99,9 @@ public class activity_trainingsstart extends AppCompatActivity {
                 }
                 SatzInt += 1;
                 TextView Satz = (TextView)findViewById(R.id.aktuellersatztxt);
-                Satz.setText(("Satz ") + SatzInt.toString());
+                Satz.setText(("Satz ") + SatzInt.toString() + "/"+angegenbensätze.toString());
                 resetTimer();
+                IntializeTextListeners();
             }
         });
 
@@ -151,11 +159,10 @@ public class activity_trainingsstart extends AppCompatActivity {
             @Override
             public void onFinish() {
                 timerrunning = false;
-                startbtn.setText("Start");
+                startbtn.setAlpha(1);
             }
         }.start();
         timerrunning = true;
-        startbtn.setText("Reset timer");
     }
 
     private void updateCountdownText(){
@@ -181,7 +188,7 @@ public class activity_trainingsstart extends AppCompatActivity {
         if (timerrunning == true){
             countdowntimer.cancel();
             timerrunning = false;
-            startbtn.setText("Start timer");
+            startbtn.setAlpha(1);
         }
     }
 
@@ -253,9 +260,11 @@ public class activity_trainingsstart extends AppCompatActivity {
         wiederholungentxb = findViewById(R.id.wiederholungenimsatztxb);
         pausenzeittxb = findViewById(R.id.timertxb);
 
-        SharedPreferences prefs = getSharedPreferences("übungseigenschaften", MODE_PRIVATE);
-        final SharedPreferences.Editor editor = prefs.edit();
 
+        SharedPreferences prefs = getSharedPreferences("übungseigenschaften", MODE_PRIVATE);
+        SharedPreferences prefsStatistik = getSharedPreferences("statistik", MODE_PRIVATE);
+        final SharedPreferences.Editor editor = prefs.edit();
+        final SharedPreferences.Editor editorstatistik = prefsStatistik.edit();
         //fülle die Werte
         if(!prefs.contains("gewicht"+aktuelleübung+SatzInt)) //wenn es für diesen Satz noch nichts gibt, nimmt er das vom vorher Eingegebenen
             gewichtetxb.setText(prefs.getString("gewicht"+aktuelleübung, ""));
@@ -272,6 +281,8 @@ public class activity_trainingsstart extends AppCompatActivity {
         else
         pausenzeittxb.setText(prefs.getString("pause"+aktuelleübung+SatzInt, ""));
 
+        final Calendar cal = Calendar.getInstance();
+
         //setze die prefs
         gewichtetxb.addTextChangedListener(new TextWatcher() {
             @Override
@@ -283,6 +294,9 @@ public class activity_trainingsstart extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 editor.putString("gewicht"+aktuelleübung+SatzInt, s.toString());
                 editor.apply();
+
+                editorstatistik.putString("gewicht"+aktuelleübung+cal, s.toString());
+                editorstatistik.apply();
             }
 
             @Override
@@ -300,6 +314,9 @@ public class activity_trainingsstart extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 editor.putString("wiederholungen"+aktuelleübung+SatzInt, s.toString());
                 editor.apply();
+
+                editorstatistik.putString("wiederholungen"+aktuelleübung+cal, s.toString());
+                editorstatistik.apply();
             }
 
             @Override

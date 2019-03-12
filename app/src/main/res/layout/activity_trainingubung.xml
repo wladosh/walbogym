@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".activity_trainingubung">
 
 
@@ -37,7 +38,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="3dp"
         android:layout_marginRight="3dp"
-        android:background="@android:color/background_light"
+        android:background="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
@@ -56,6 +57,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:text="Gewicht"
+            android:textColor="@color/colorPrimary"
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -67,7 +69,7 @@
 
         <EditText
             android:id="@+id/gewichttxb"
-            android:layout_width="115dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginLeft="100dp"
@@ -75,17 +77,20 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
+            android:background="@drawable/edittext_bg"
             android:ems="10"
-            android:gravity="right"
+            android:gravity="center"
             android:hint="z.B. 30,25"
             android:inputType="numberDecimal"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView9"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.17" />
+            app:layout_constraintVertical_bias="0.171" />
 
         <TextView
             android:id="@+id/textView9"
@@ -93,11 +98,13 @@
             android:layout_height="52dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="6dp"
             android:layout_marginEnd="116dp"
             android:layout_marginRight="116dp"
             android:text="Kg"
+            android:textColor="@color/colorPrimary"
             android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="@+id/gewichtimsatztxb"
+            app:layout_constraintBottom_toBottomOf="@+id/gewichttxb"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -114,6 +121,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="236dp"
             android:text="Wiederholungen"
+            android:textColor="@color/colorPrimary"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -134,6 +142,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="236dp"
             android:text="Sätze"
+            android:textColor="@color/colorPrimary"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -146,13 +155,16 @@
         <EditText
             android:id="@+id/wiederholungentxb"
             android:layout_width="90dp"
-            android:layout_height="46dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:background="@drawable/edittext_bg"
             android:ems="10"
             android:hint="8"
             android:inputType="number"
             android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/wiederholungentxt"
@@ -166,19 +178,23 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginBottom="8dp"
+            android:background="@drawable/edittext_bg"
             android:ems="10"
             android:hint="3"
             android:inputType="number"
             android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/saetzetxt"
             app:layout_constraintHorizontal_bias="0.555"
             app:layout_constraintStart_toStartOf="@+id/saetzetxt"
             app:layout_constraintTop_toBottomOf="@+id/saetzetxt"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.021" />
 
         <View
+            android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginTop="244dp"
@@ -210,17 +226,18 @@
         <Button
             android:id="@+id/timerstartbtn"
             android:layout_width="265dp"
-            android:layout_height="113dp"
+            android:layout_height="83dp"
             android:layout_marginStart="52dp"
             android:layout_marginLeft="52dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:text="Starte mit Satz 1"
             android:textSize="24sp"
+            android:background="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.922" />
+            app:layout_constraintVertical_bias="0.893" />
 
     </android.support.constraint.ConstraintLayout>
 

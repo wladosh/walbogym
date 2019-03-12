@@ -8,7 +8,7 @@
     tools:context=".Motivation">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/motivationimage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,5 +16,5 @@
         app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/stop" />
+        app:srcCompat="@drawable/motivation0" />
 </android.support.constraint.ConstraintLayout>
